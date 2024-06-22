@@ -3,7 +3,6 @@ import { css } from "styled-system/css";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { ClientActionFunctionArgs, Form, redirect } from "@remix-run/react";
-import { useState } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -24,7 +23,6 @@ export async function clientAction({ request }: ClientActionFunctionArgs) {
 }
 
 export default function Index() {
-  const [title, setTitle] = useState("");
   return (
     <div
       style={{

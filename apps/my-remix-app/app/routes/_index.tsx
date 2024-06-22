@@ -3,6 +3,9 @@ import { css } from "styled-system/css";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { ClientActionFunctionArgs, Form, redirect } from "@remix-run/react";
+import { sum } from "calc";
+import { FormLabel } from "~/components/ui/form-label";
+import { useCallback, useState } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,16 +16,37 @@ export const meta: MetaFunction = () => {
 
 export async function clientAction({ request }: ClientActionFunctionArgs) {
   const body = await request.formData();
-  console.log("title", body.get("title"));
-  console.log(body);
-  // await createBlogPost({
-  //   title: body.get("title")!,
-  //   content: body.get("content")!,
-  // });
+  const a = body.get("a") ? parseInt(body.get("a") as string) : 0;
+  const b = body.get("b") ? parseInt(body.get("b") as string) : 0;
+  console.log(sum(a, b));
   return redirect(`/`);
 }
 
 export default function Index() {
+  const [resultA, setResultA] = useState(0);
+  const [resultB, setResultB] = useState(0);
+  const onChangeA = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value === "") {
+      setResultA(0);
+      return;
+    }
+    setResultA(parseInt(e.target.value));
+  };
+  const onChangeB = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value === "") {
+      setResultB(0);
+      return;
+    }
+
+    setResultB(parseInt(e.target.value));
+  };
+  const result = useCallback(() => {
+    if (resultA === 0 && resultB === 0) {
+      return "0";
+    }
+    return sum(resultA, resultB);
+  }, [resultA, resultB]);
+
   return (
     <div
       style={{
@@ -39,37 +63,67 @@ export default function Index() {
 
       <div
         className={css({
-          marginTop: 5,
           display: "flex",
-          flexDir: "column",
-          gap: 3,
-          width: "500px",
+          flexDirection: "row",
+          h: "full",
         })}
       >
-        {/* フォーム */}
-        <Form method="post">
-          <Input type="text" name="title" placeholder="Hello from Panda" />
-          <div
-            className={css({
-              paddingTop: 3,
-            })}
-          >
-            <Button type="submit">保存</Button>
-          </div>
-        </Form>
-      </div>
-      <div>
         <div
           className={css({
-            divideX: "3px",
-            divideY: "10px",
-            divideColor: "black",
-            w: "full",
+            marginTop: 5,
+            display: "flex",
+            flexDir: "column",
+            gap: 3,
+            width: "500px",
           })}
-        />
-      </div>
-      <div>
-        <a href="/about">About</a>
+        >
+          {/* フォーム */}
+          <Form
+            method="post"
+            className={css({
+              display: "flex",
+              flexDirection: "column",
+              gap: 3,
+            })}
+          >
+            <FormLabel
+              className={css({
+                display: "flex",
+                flexDirection: "column",
+                w: "100px",
+              })}
+            >
+              入力A
+              <Input type={"number"} name="a" onChange={onChangeA} />
+            </FormLabel>
+            <FormLabel
+              className={css({
+                display: "flex",
+                flexDirection: "column",
+                w: "100px",
+              })}
+            >
+              入力B
+              <Input type={"number"} name="b" onChange={onChangeB} />
+            </FormLabel>
+            <div
+              className={css({
+                paddingTop: 3,
+              })}
+            >
+              <Button type="submit">保存</Button>
+            </div>
+          </Form>
+        </div>
+        <div
+          className={css({
+            w: "full",
+            h: "full",
+          })}
+        >
+          <div>入力A + 入力B</div>
+          <p>{result()}</p>
+        </div>
       </div>
     </div>
   );

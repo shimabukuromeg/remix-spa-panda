@@ -60,6 +60,7 @@ export default function Index() {
       }}
     >
       <h1>Welcome to Remix (SPA Mode)</h1>
+      <h1>リミックス！！！</h1>
 
       <div
         className={css({

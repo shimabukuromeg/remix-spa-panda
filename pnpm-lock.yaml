@@ -16,16 +16,22 @@ importers:
     dependencies:
       '@ark-ui/react':
         specifier: ^3.2.1
-        version: 3.3.0(@internationalized/date@3.5.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 3.3.0(@internationalized/date@3.5.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@remix-run/node':
         specifier: ^2.9.2
         version: 2.9.2(typescript@5.5.2)
       '@remix-run/react':
         specifier: ^2.9.2
         version: 2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.2)
+      '@vercel/edge':
+        specifier: ^1.1.1
+        version: 1.1.1
       '@vercel/remix':
         specifier: 2.9.2-patch.2
         version: 2.9.2-patch.2(@remix-run/dev@2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.2))(@types/node@20.14.7)(lightningcss@1.23.0)(typescript@5.5.2)(vite@5.3.1(@types/node@20.14.7)(lightningcss@1.23.0)))(@remix-run/node@2.9.2(typescript@5.5.2))(@remix-run/server-runtime@2.9.2(typescript@5.5.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      basic-auth:
+        specifier: ^2.0.1
+        version: 2.0.1
       calc:
         specifier: workspace:*
         version: link:../../packages/calc
@@ -35,13 +41,16 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      static-auth:
+        specifier: ^2.1.2
+        version: 2.1.2
     devDependencies:
       '@pandacss/dev':
         specifier: ^0.40.1
         version: 0.40.1(typescript@5.5.2)
       '@park-ui/panda-preset':
         specifier: ^0.38.0
-        version: 0.38.0(@internationalized/date@3.5.4)(@pandacss/dev@0.40.1(typescript@5.5.2))
+        version: 0.38.0(@internationalized/date@3.5.3)(@pandacss/dev@0.40.1(typescript@5.5.2))
       '@remix-run/dev':
         specifier: ^2.9.2
         version: 2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.2))(@types/node@20.14.7)(lightningcss@1.23.0)(typescript@5.5.2)(vite@5.3.1(@types/node@20.14.7)(lightningcss@1.23.0))
@@ -1176,6 +1185,9 @@ packages:
   '@vanilla-extract/private@1.0.5':
     resolution: {integrity: sha512-6YXeOEKYTA3UV+RC8DeAjFk+/okoNz/h88R+McnzA2zpaVqTR/Ep+vszkWYlGBcMNO7vEkqbq5nT/JMMvhi+tw==}
 
+  '@vercel/edge@1.1.1':
+    resolution: {integrity: sha512-NtKiIbn9Cq6HWGy+qRudz28mz5nxfOJWls5Pnckjw1yCfSX8rhXdvY/il3Sy3Zd5n/sKCM2h7VSCCpJF/oaDrQ==}
+
   '@vercel/remix@2.9.2-patch.2':
     resolution: {integrity: sha512-sKSeBFqTj0HSYsf7KpxA84ixrb4AkuoDm0G7hlrWUnRtCy9Fa65YX8fbHoewdVbc8uTBa2XAiBCjPMmtohas9w==}
     engines: {node: '>=18.0.0'}
@@ -1744,6 +1756,10 @@ packages:
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+
+  basic-auth@2.0.1:
+    resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
+    engines: {node: '>= 0.8'}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -4050,6 +4066,9 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
+  static-auth@2.1.2:
+    resolution: {integrity: sha512-YkEXsAPxPIotkHaMc6AOCrTEQRxA+VBmruKdY1XhFtHtURRnWvIXHUH54q8WXmeLHN1IUp8liChLS20azXN4pQ==}
+
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
@@ -4664,7 +4683,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@ark-ui/anatomy@3.2.0(@internationalized/date@3.5.4)':
+  '@ark-ui/anatomy@3.2.0(@internationalized/date@3.5.3)':
     dependencies:
       '@zag-js/accordion': 0.51.1
       '@zag-js/anatomy': 0.51.1
@@ -4677,7 +4696,7 @@ snapshots:
       '@zag-js/color-utils': 0.51.1
       '@zag-js/combobox': 0.51.1
       '@zag-js/date-picker': 0.51.1
-      '@zag-js/date-utils': 0.51.1(@internationalized/date@3.5.4)
+      '@zag-js/date-utils': 0.51.1(@internationalized/date@3.5.3)
       '@zag-js/dialog': 0.51.1
       '@zag-js/editable': 0.51.1
       '@zag-js/file-upload': 0.51.1
@@ -4704,7 +4723,7 @@ snapshots:
     transitivePeerDependencies:
       - '@internationalized/date'
 
-  '@ark-ui/anatomy@3.3.1(@internationalized/date@3.5.4)':
+  '@ark-ui/anatomy@3.3.1(@internationalized/date@3.5.3)':
     dependencies:
       '@zag-js/accordion': 0.56.1
       '@zag-js/anatomy': 0.56.1
@@ -4717,7 +4736,7 @@ snapshots:
       '@zag-js/color-utils': 0.56.1
       '@zag-js/combobox': 0.56.1
       '@zag-js/date-picker': 0.56.1
-      '@zag-js/date-utils': 0.56.1(@internationalized/date@3.5.4)
+      '@zag-js/date-utils': 0.56.1(@internationalized/date@3.5.3)
       '@zag-js/dialog': 0.56.1
       '@zag-js/editable': 0.56.1
       '@zag-js/file-upload': 0.56.1
@@ -4746,9 +4765,9 @@ snapshots:
     transitivePeerDependencies:
       - '@internationalized/date'
 
-  '@ark-ui/react@3.3.0(@internationalized/date@3.5.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@ark-ui/react@3.3.0(@internationalized/date@3.5.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@ark-ui/anatomy': 3.3.1(@internationalized/date@3.5.4)
+      '@ark-ui/anatomy': 3.3.1(@internationalized/date@3.5.3)
       '@zag-js/accordion': 0.56.1
       '@zag-js/avatar': 0.56.1
       '@zag-js/carousel': 0.56.1
@@ -4760,7 +4779,7 @@ snapshots:
       '@zag-js/combobox': 0.56.1
       '@zag-js/core': 0.56.1
       '@zag-js/date-picker': 0.56.1
-      '@zag-js/date-utils': 0.56.1(@internationalized/date@3.5.4)
+      '@zag-js/date-utils': 0.56.1(@internationalized/date@3.5.3)
       '@zag-js/dialog': 0.56.1
       '@zag-js/dom-query': 0.56.1
       '@zag-js/editable': 0.56.1
@@ -5578,9 +5597,9 @@ snapshots:
 
   '@pandacss/types@0.40.1': {}
 
-  '@park-ui/panda-preset@0.38.0(@internationalized/date@3.5.4)(@pandacss/dev@0.40.1(typescript@5.5.2))':
+  '@park-ui/panda-preset@0.38.0(@internationalized/date@3.5.3)(@pandacss/dev@0.40.1(typescript@5.5.2))':
     dependencies:
-      '@ark-ui/anatomy': 3.2.0(@internationalized/date@3.5.4)
+      '@ark-ui/anatomy': 3.2.0(@internationalized/date@3.5.3)
       '@pandacss/dev': 0.40.1(typescript@5.5.2)
       '@radix-ui/colors': 3.0.0
       deepmerge: 4.3.1
@@ -5992,6 +6011,8 @@ snapshots:
 
   '@vanilla-extract/private@1.0.5': {}
 
+  '@vercel/edge@1.1.1': {}
+
   '@vercel/remix@2.9.2-patch.2(@remix-run/dev@2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.2))(@types/node@20.14.7)(lightningcss@1.23.0)(typescript@5.5.2)(vite@5.3.1(@types/node@20.14.7)(lightningcss@1.23.0)))(@remix-run/node@2.9.2(typescript@5.5.2))(@remix-run/server-runtime@2.9.2(typescript@5.5.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@remix-run/dev': 2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.2))(@types/node@20.14.7)(lightningcss@1.23.0)(typescript@5.5.2)(vite@5.3.1(@types/node@20.14.7)(lightningcss@1.23.0))
@@ -6325,9 +6346,9 @@ snapshots:
     dependencies:
       '@internationalized/date': 3.5.3
 
-  '@zag-js/date-utils@0.51.1(@internationalized/date@3.5.4)':
+  '@zag-js/date-utils@0.56.1(@internationalized/date@3.5.3)':
     dependencies:
-      '@internationalized/date': 3.5.4
+      '@internationalized/date': 3.5.3
 
   '@zag-js/date-utils@0.56.1(@internationalized/date@3.5.4)':
     dependencies:
@@ -7145,6 +7166,10 @@ snapshots:
   balanced-match@1.0.2: {}
 
   base64-js@1.5.1: {}
+
+  basic-auth@2.0.1:
+    dependencies:
+      safe-buffer: 5.1.2
 
   binary-extensions@2.3.0: {}
 
@@ -9884,6 +9909,13 @@ snapshots:
       minipass: 7.1.2
 
   stackback@0.0.2: {}
+
+  static-auth@2.1.2:
+    dependencies:
+      basic-auth: 2.0.1
+      serve-static: 1.15.0
+    transitivePeerDependencies:
+      - supports-color
 
   statuses@2.0.1: {}
 

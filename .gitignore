@@ -44,5 +44,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 .env*.local
-
+ 
+ # tsup
 dist
+
+# vitest
+coverage

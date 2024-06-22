@@ -45,8 +45,11 @@ yarn-error.log*
 *.tsbuildinfo
 .env*.local
  
- # tsup
+# tsup
 dist
 
 # vitest
 coverage
+
+# turbo
+.turbo

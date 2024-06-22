@@ -16,9 +16,10 @@
     "@ark-ui/react": "^3.2.1",
     "@remix-run/node": "^2.9.2",
     "@remix-run/react": "^2.9.2",
+    "@vercel/remix": "2.9.2-patch.2",
+    "calc": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "calc": "workspace:*"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.40.1",

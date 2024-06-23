@@ -47,6 +47,10 @@ export default function Index() {
     return sum(resultA, resultB);
   }, [resultA, resultB]);
 
+  // MEMO: 環境変数の確認
+  console.log(import.meta.env);
+  console.log(import.meta.env.VITE_SOME_KEY);
+
   return (
     <div
       style={{

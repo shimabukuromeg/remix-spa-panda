@@ -16,10 +16,13 @@
     "@ark-ui/react": "^3.2.1",
     "@remix-run/node": "^2.9.2",
     "@remix-run/react": "^2.9.2",
+    "@vercel/edge": "^1.1.1",
     "@vercel/remix": "2.9.2-patch.2",
+    "basic-auth": "^2.0.1",
     "calc": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "static-auth": "^2.1.2"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.40.1",
